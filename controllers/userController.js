@@ -2,6 +2,9 @@ const User = require('../models/Users');
 const bcrypt = require('bcryptjs');
 
 module.exports = {
+  getAllUsers: (req, res) => {
+    res.json(users);
+  },
   register: (req, res) => {
     return new Promise((resolve, reject) => {
       const { name, email, password } = req.body;
@@ -36,7 +39,6 @@ module.exports = {
             reject(err);
           });
       });
-      resolve();
     });
   },
 
